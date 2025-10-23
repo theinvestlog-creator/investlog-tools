@@ -79,6 +79,32 @@
 
         </div>
       </div>
+
+<div id="perf100" style="height:420px"></div>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2"></script>
+<script>
+(async function () {
+  const r = await fetch('/data/perf100_monthly.json');
+  const j = await r.json();
+  const metaKeys = new Set(['meta']);
+  const traces = [];
+  for (const [sym, arr] of Object.entries(j)) {
+    if (metaKeys.has(sym)) continue;
+    const x = arr.map(d => d[0]);
+    const y = arr.map(d => d[1]);
+    traces.push({ x, y, name: sym, mode: 'lines' });
+  }
+  Plotly.newPlot('perf100', traces, {
+    title: 'Rebased to 100 (Monthly)',
+    xaxis: { type: 'date' },
+    yaxis: { fixedrange: true }
+  }, { displayModeBar: false, responsive: true });
+})();
+</script>
+
+
+
+      
     </section>
   </div>
 
