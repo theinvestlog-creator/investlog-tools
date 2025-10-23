@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "InvestLog Tools" }}</title>
+  <meta name="description" content="{{ description or '' }}">
+  <!-- AdminLTE/Bootstrap/CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/css/adminlte.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" rel="stylesheet">
+  <!-- Optional: Flatpickr for date inputs (used by profit-take) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  {% if css %}<link rel="stylesheet" href="{{ css }}">{% endif %}
+  {% block head %}{% endblock %}
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+  {% include "navbar.njk" %}
+  {% include "sidebar.njk" %}
+
+  <div class="content-wrapper">
+    <section class="content pt-3">
+      <div class="container-fluid">
+        {{ content | safe }}
+      </div>
+    </section>
+  </div>
+
+  {% include "footer.njk" %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0/dist/js/adminlte.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="module" src="/assets/js/utils.js"></script>
+{% if js %}<script type="module" src="{{ js }}"></script>{% endif %}
+{% block scripts %}{% endblock %}
+</body>
+</html>
