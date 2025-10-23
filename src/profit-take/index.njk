@@ -1,0 +1,68 @@
+---
+title: Profit-Taking Calculator
+description: Compare an after-tax sale vs a benchmark (no taxes), using /data/prices_daily.json.
+layout: layout.njk
+css: /profit-take/tool.css
+js: /profit-take/tool.js
+---
+
+<div class="row g-3">
+  <div class="col-lg-5">
+    <div class="card card-dark">
+      <div class="card-header"><h3 class="card-title">Inputs</h3></div>
+      <div class="card-body">
+        <div class="mb-2">
+          <label for="benchmark" class="form-label">Benchmark</label>
+          <select id="benchmark" class="form-select">
+            <option value="VWCE.MI">VWCE.MI</option>
+            <option value="V60A.AS">V60A.AS</option>
+            <option value="CSPX.AS">CSPX.AS</option>
+            <option value="VOO">VOO</option>
+            <option value="VT">VT</option>
+            <option value="AOR">AOR</option>
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <label for="purchaseDate" class="form-label">Purchase date</label>
+          <input id="purchaseDate" class="form-control" placeholder="Select date">
+          <div class="form-text">We’ll use the benchmark’s close on this date (or nearest trading day after).</div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 mb-2">
+            <label for="purchasePrice" class="form-label">Purchase price</label>
+            <input id="purchasePrice" type="number" step="0.01" class="form-control">
+          </div>
+          <div class="col-6 mb-2">
+            <label for="shares" class="form-label">Shares</label>
+            <input id="shares" type="number" step="0.0001" class="form-control">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 mb-2">
+            <label for="salePrice" class="form-label">Sale price (today)</label>
+            <input id="salePrice" type="number" step="0.01" class="form-control">
+          </div>
+          <div class="col-6 mb-2">
+            <label for="taxRate" class="form-label">Tax rate (%)</label>
+            <input id="taxRate" type="number" step="0.01" value="26.375" class="form-control">
+            <div class="form-text">Set your capital-gains tax rate.</div>
+          </div>
+        </div>
+
+        <button id="calcBtn" class="btn btn-primary mt-2">Calculate</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card card-dark">
+      <div class="card-header"><h3 class="card-title">Report</h3></div>
+      <div class="card-body">
+        <pre id="report" class="report">Fill inputs and click Calculate.</pre>
+      </div>
+    </div>
+  </div>
+</div>
