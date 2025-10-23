@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve --port=8080"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0"

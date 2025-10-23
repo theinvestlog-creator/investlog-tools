@@ -1,8 +1,0 @@
-{
-  "symbol": "SPX",
-  "source": "yfinance",
-  "price": 6699.4,
-  "currency": "USD",
-  "as_of_utc": "2025-10-22T00:00:00Z",
-  "last_updated_unix": 1761211189
-}
