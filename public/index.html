@@ -100,7 +100,7 @@
   const timeEl  = document.getElementById('spx-time');
   const srcEl   = document.getElementById('spx-source');
   try {
-    const r = await fetch('/data/sp500.json', { cache: 'no-cache' });
+    const r = await fetch('/data/sp500.json');
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
     priceEl.textContent = `${j.price} ${j.currency || ''}`.trim();
