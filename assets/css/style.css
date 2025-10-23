@@ -1,0 +1,11 @@
+/* Namespaced styles to avoid conflicts with AdminLTE */
+.rdcf .display-5{font-weight:800}
+.rdcf .info-box{background:#1f2530;border:1px solid #2a3140;border-radius:12px}
+.rdcf .chips{display:flex;flex-wrap:wrap;gap:8px}
+.rdcf .chip{background:#313a4a;border:1px solid #3c475a;border-radius:999px;padding:6px 10px;font-size:.9rem}
+.rdcf .chip.bad{background:#e74c3c;border-color:#e74c3c;color:#fff}
+.calc-badge{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:700;background:#3a4557;color:#e5ecf3}
+.calc-badge.ok{background:#2ecc71;color:#042c14}
+.calc-badge.warn{background:#f1c40f;color:#322800}
+.calc-badge.bad{background:#e74c3c;color:#2a0100}
+.rdcf code{background:#2a3140;padding:2px 6px;border-radius:6px}
